@@ -1,0 +1,7 @@
+id,name,email,email_domain,age,country
+1,Ada Lovelace,ada@example.com,example.com,36,uk
+2,Alan Turing,alan@example.com,example.com,41,uk
+3,Grace Hopper,grace@example.com,example.com,85,us
+4,Katherine Johnson,katherine@example.com,example.com,101,us
+8,Ada Lovelace,ada@example.com,example.com,36,uk
+9,Linus Torvalds,linus@example.com,example.com,54,fi

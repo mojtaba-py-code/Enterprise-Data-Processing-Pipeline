@@ -1,0 +1,63 @@
+# Example pipeline: clean a customers CSV and write the valid rows out.
+# Run it with:  edp run --config configs/pipeline.example.yaml
+name: customers-etl
+version: "1.0"
+
+source:
+  type: csv
+  options:
+    path: data/sample/customers.csv
+
+validation:
+  on_error: quarantine          # fail | drop | quarantine
+  quarantine_path: data/output/customers_rejected.csv
+  schema:
+    - name: id
+      type: int
+      required: true
+      unique: true
+    - name: email
+      type: str
+      required: true
+      pattern: "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    - name: age
+      type: int
+      required: false
+      min: 0
+      max: 120
+    - name: country
+      type: str
+      required: true
+      allowed: [uk, us, fi, nl, de, fr]
+
+transforms:
+  - type: str_case              # normalise emails to lowercase
+    options:
+      columns: [email]
+      mode: lower
+  - type: rename
+    options:
+      columns:
+        full_name: name
+  - type: split_column          # derive the email domain
+    options:
+      source: email
+      delimiter: "@"
+      index: 1
+      target: email_domain
+  - type: cast
+    options:
+      columns:
+        age: int
+  - type: select
+    options:
+      columns: [id, name, email, email_domain, age, country]
+
+sink:
+  type: csv
+  options:
+    path: data/output/customers_clean.csv
+
+observability:
+  log_level: INFO
+  log_format: text

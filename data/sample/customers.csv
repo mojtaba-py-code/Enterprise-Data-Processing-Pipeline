@@ -1,0 +1,11 @@
+id,full_name,email,age,country
+1,Ada Lovelace,ada@example.com,36,uk
+2,Alan Turing,alan@example.com,41,uk
+3,Grace Hopper,grace@example.com,85,us
+4,Katherine Johnson,KATHERINE@EXAMPLE.COM,101,us
+5,Margaret Hamilton,not-an-email,32,us
+6,Radia Perlman,,67,us
+7,Barbara Liskov,barbara@example.com,-4,us
+8,Ada Lovelace,ada@example.com,36,uk
+9,Linus Torvalds,linus@example.com,54,fi
+10,Guido van Rossum,guido@example.com,abc,nl

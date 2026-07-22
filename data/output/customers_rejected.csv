@@ -1,0 +1,5 @@
+id,full_name,email,age,country,_errors
+5,Margaret Hamilton,not-an-email,32,us,email:pattern
+6,Radia Perlman,,67,us,email:required
+7,Barbara Liskov,barbara@example.com,-4,us,age:below_min
+10,Guido van Rossum,guido@example.com,abc,nl,age:not_int
