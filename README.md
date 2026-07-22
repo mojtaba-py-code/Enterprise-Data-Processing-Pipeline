@@ -5,7 +5,7 @@ data flow — ingest → validate → transform → load — in a single YAML fi
 run it from the command line. Adding a new source, sink, or transformation
 never requires touching the core.
 
-[![CI](https://github.com/your-org/enterprise-data-pipeline/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
+[![CI](https://github.com/mojtaba-py-code/Enterprise-Data-Processing-Pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/mojtaba-py-code/Enterprise-Data-Processing-Pipeline/actions/workflows/ci.yml)
 
 ---
 
